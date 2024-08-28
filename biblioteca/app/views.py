@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from .models import Pessoa, Genero, Livro, Capitulo, Bibliografia, Franquia
 from .forms import PessoaForm, GeneroForm, LivroForm, CapituloForm, BibliografiaForm, FranquiaForm
+from django.views.generic import ListView, DetailView
 
 
 # Create your views here.
@@ -86,3 +87,43 @@ class CadastrarFranquia(View):
             form.save()
             return render(request, 'index.html')
         return render(request, 'index.html')
+    
+class LivroListView(ListView):
+    model = Livro
+    template_name = 'livro_list.html'
+    context_object_name = 'livros'
+
+class LivroDetailView(DetailView):
+    model = Livro
+    template_name = 'livro_detail.html'
+    context_object_name = 'livro'
+
+class CapituloListView(ListView):
+    model = Capitulo
+    template_name = 'capitulo_list.html'
+    context_object_name = 'capitulos'
+
+class CapituloDetailView(DetailView):
+    model = Capitulo
+    template_name = 'capitulo_detail.html'
+    context_object_name = 'capitulo'
+
+class BibliografiaListView(ListView):
+    model = Bibliografia
+    template_name = 'bibliografia_list.html'
+    context_object_name = 'bibliografias'
+
+class BibliografiaDetailView(DetailView):
+    model = Bibliografia
+    template_name = 'bibliografia_detail.html'
+    context_object_name = 'bibliografia'
+
+class FranquiaListView(ListView):
+    model = Franquia
+    template_name = 'franquia_list.html'
+    context_object_name = 'franquias'
+
+class FranquiaDetailView(DetailView):
+    model = Franquia
+    template_name = 'franquia_detail.html'
+    context_object_name = 'franquia'

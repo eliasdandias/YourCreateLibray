@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Bibliografia</title>
+    <!-- Incluindo o CDN do Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #9f8dff;
+            padding-top: 50px;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .card-header {
+            background-color: #6f42c1;
+            color: white;
+        }
+        .card-body p {
+            font-size: 18px;
+        }
+        h1 {
+            color: #6f42c1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1>{{ bibliografia.autor.nome }}</h1>
+            </div>
+            <div class="card-body">
+                <p><strong>Livro:</strong> {{ bibliografia.livro.nome }}</p>
+                <p><strong>Depoimento:</strong> {{ bibliografia.depoimento }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluindo o CDN do Bootstrap JS e dependências -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
